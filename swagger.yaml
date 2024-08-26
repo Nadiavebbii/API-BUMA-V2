@@ -1,0 +1,3686 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: BUMA DSM
+  contact: {}
+host: buma.predictdsm.com
+basePath: /api/v2/driverbehaviour
+securityDefinitions: {}
+schemes:
+  - https
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /encode:
+    post:
+      summary: Encode
+      tags:
+        - V2
+      operationId: Encode
+      deprecated: false
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+        - name: Accept
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: Content-Type
+          in: header
+          required: false
+          enum:
+            - application/json
+          type: string
+          description: ''
+        - name: Body
+          in: body
+          required: true
+          description: ''
+          schema:
+            $ref: '#/definitions/EncodeRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response'
+          examples:
+            application/json:
+              success: true
+              error: null
+              message: Data retrieved.
+              data: ZGVtby1zdWFkbWluOlByZWRpY3REU00zMjEr
+          headers:
+            Date:
+              type: string
+              default: Sun, 06 Mar 2022 16:45:09 GMT
+            Server:
+              type: string
+              default: Apache/2.4.51 (Win64) OpenSSL/1.1.1d PHP/7.4.3
+            X-Powered-By:
+              type: string
+              default: PHP/7.4.3
+            Cache-Control:
+              type: string
+              default: no-cache, private
+            X-RateLimit-Limit:
+              type: string
+              default: '60'
+            X-RateLimit-Remaining:
+              type: string
+              default: '59'
+            Content-Length:
+              type: string
+              default: '103'
+            Keep-Alive:
+              type: string
+              default: timeout=5, max=100
+            Connection:
+              type: string
+              default: Keep-Alive
+  /alarmtypes:
+    post:
+      summary: Error Page
+      tags:
+        - V2
+      operationId: ErrorPage
+      deprecated: false
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+        - name: Accept
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: Content-Type
+          in: header
+          required: false
+          enum:
+            - application/json
+          type: string
+          description: ''
+        - name: Body
+          in: body
+          required: true
+          description: ''
+          schema:
+            $ref: '#/definitions/ErrorPageRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Unauthenticated'
+          examples:
+            application/json:
+              success: false
+              error: Unauthenticated
+              message: Please sign in first.
+          headers:
+            Date:
+              type: string
+              default: Fri, 27 Oct 2023 03:35:40 GMT
+            Server:
+              type: string
+              default: Apache/2.4.54 (Win32) OpenSSL/1.1.1q PHP/7.4.32
+            X-Powered-By:
+              type: string
+              default: PHP/7.4.32
+            Cache-Control:
+              type: string
+              default: no-cache, private
+            X-RateLimit-Limit:
+              type: string
+              default: '60'
+            X-RateLimit-Remaining:
+              type: string
+              default: '59'
+            Content-Length:
+              type: string
+              default: '77'
+            Keep-Alive:
+              type: string
+              default: timeout=5, max=100
+            Connection:
+              type: string
+              default: Keep-Alive
+        '405':
+          description: Method Not Allowed
+          schema:
+            $ref: '#/definitions/404PageNotFound1'
+          examples:
+            application/json:
+              success: false
+              error: Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException
+              message: 'The POST method is not supported for this route. Supported methods: GET, HEAD.'
+          headers:
+            Date:
+              type: string
+              default: Fri, 27 Oct 2023 03:36:11 GMT
+            Server:
+              type: string
+              default: Apache/2.4.54 (Win32) OpenSSL/1.1.1q PHP/7.4.32
+            X-Powered-By:
+              type: string
+              default: PHP/7.4.32
+            Allow:
+              type: string
+              default: GET, HEAD
+            Cache-Control:
+              type: string
+              default: no-cache, private
+            Content-Length:
+              type: string
+              default: '210'
+            Connection:
+              type: string
+              default: close
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/500InternalServerError1'
+          examples:
+            application/json:
+              success: false
+              error: ErrorException
+              message: Internal Server Error.
+          headers:
+            Date:
+              type: string
+              default: Fri, 27 Oct 2023 03:43:59 GMT
+            Server:
+              type: string
+              default: Apache/2.4.54 (Win32) OpenSSL/1.1.1q PHP/7.4.32
+            X-Powered-By:
+              type: string
+              default: PHP/7.4.32
+            Cache-Control:
+              type: string
+              default: no-cache, private
+            X-RateLimit-Limit:
+              type: string
+              default: '60'
+            X-RateLimit-Remaining:
+              type: string
+              default: '59'
+            Content-Length:
+              type: string
+              default: '96'
+            Connection:
+              type: string
+              default: close
+  /alarm-types:
+    post:
+      summary: Alarm Types
+      tags:
+        - V2
+      operationId: AlarmTypes
+      deprecated: false
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+        - name: Accept
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: Content-Type
+          in: header
+          required: false
+          enum:
+            - application/json
+          type: string
+          description: ''
+        - name: Body
+          in: body
+          required: true
+          description: ''
+          schema:
+            $ref: '#/definitions/AlarmTypesRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response1'
+          examples:
+            application/json:
+              success: true
+              error: null
+              message: Driver retrieved.
+              data:
+                - Camera-covering alarm
+                - Driver Distraction
+                - Driver Fatigue
+                - Forward Collision Warning
+                - High-speed alarm
+                - IO 1
+                - No driver
+                - Phone Detection
+                - Smoking Detection
+                - Video loss alarm
+                - Yawning Detection
+              total_data: 11
+          headers:
+            Date:
+              type: string
+              default: Sun, 06 Mar 2022 16:57:09 GMT
+            Server:
+              type: string
+              default: Apache/2.4.51 (Win64) OpenSSL/1.1.1d PHP/7.4.3
+            X-Powered-By:
+              type: string
+              default: PHP/7.4.3
+            Cache-Control:
+              type: string
+              default: no-cache, private
+            X-RateLimit-Limit:
+              type: string
+              default: '60'
+            X-RateLimit-Remaining:
+              type: string
+              default: '60'
+            Content-Length:
+              type: string
+              default: '289'
+            Keep-Alive:
+              type: string
+              default: timeout=5, max=100
+            Connection:
+              type: string
+              default: Keep-Alive
+  /sites:
+    post:
+      summary: Sites
+      tags:
+        - V2
+      operationId: Sites
+      deprecated: false
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+        - name: Accept
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: Content-Type
+          in: header
+          required: false
+          enum:
+            - application/json
+          type: string
+          description: ''
+        - name: Body
+          in: body
+          required: true
+          description: ''
+          schema:
+            $ref: '#/definitions/SitesRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response2'
+          examples:
+            application/json:
+              success: true
+              error: null
+              message: Data retrieved.
+              data:
+                - SiteId: BMOBUS
+                  Name: BMO - BUS
+                - SiteId: BMOFUELTRUCK
+                  Name: BMO - FUEL TRUCK
+                - SiteId: BMOHAULCOAL
+                  Name: BMO - HAULING COAL
+                - SiteId: BMOHAULCOALSUARAN
+                  Name: BMO - HAULING COAL SUARAN
+                - SiteId: BMOMAINHAUL
+                  Name: BMO - OB HAULLER
+              total_data: 5
+          headers:
+            Date:
+              type: string
+              default: Sun, 06 Mar 2022 16:59:34 GMT
+            Server:
+              type: string
+              default: Apache/2.4.51 (Win64) OpenSSL/1.1.1d PHP/7.4.3
+            X-Powered-By:
+              type: string
+              default: PHP/7.4.3
+            Cache-Control:
+              type: string
+              default: no-cache, private
+            X-RateLimit-Limit:
+              type: string
+              default: '60'
+            X-RateLimit-Remaining:
+              type: string
+              default: '58'
+            Content-Length:
+              type: string
+              default: '342'
+            Keep-Alive:
+              type: string
+              default: timeout=5, max=100
+            Connection:
+              type: string
+              default: Keep-Alive
+  /operators:
+    post:
+      summary: Operators
+      tags:
+        - V2
+      operationId: Operators
+      deprecated: false
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+        - name: Accept
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: Content-Type
+          in: header
+          required: false
+          enum:
+            - application/json
+          type: string
+          description: ''
+        - name: Body
+          in: body
+          required: true
+          description: ''
+          schema:
+            $ref: '#/definitions/OperatorsRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response3'
+          examples:
+            application/json:
+              success: true
+              error: null
+              message: Data retrieved.
+              data:
+                - Name: Semol Nico Titawano
+                  OperatorId: 4
+                  NIK: '10026867'
+                - Name: Yosua Sambuaga Tumurang
+                  OperatorId: 5
+                  NIK: '10026868'
+                - Name: Adi Pongsamma
+                  OperatorId: 6
+                  NIK: '10026509'
+                - Name: Jalif
+                  OperatorId: 7
+                  NIK: '10026510'
+                - Name: Moh. Aswan
+                  OperatorId: 8
+                  NIK: '10026511'
+              total_data: 5
+          headers:
+            Date:
+              type: string
+              default: Sun, 06 Mar 2022 17:00:17 GMT
+            Server:
+              type: string
+              default: Apache/2.4.51 (Win64) OpenSSL/1.1.1d PHP/7.4.3
+            X-Powered-By:
+              type: string
+              default: PHP/7.4.3
+            Cache-Control:
+              type: string
+              default: no-cache, private
+            X-RateLimit-Limit:
+              type: string
+              default: '60'
+            X-RateLimit-Remaining:
+              type: string
+              default: '59'
+            Content-Length:
+              type: string
+              default: '371'
+            Keep-Alive:
+              type: string
+              default: timeout=5, max=100
+            Connection:
+              type: string
+              default: Keep-Alive
+  /equipments:
+    post:
+      summary: Equipments
+      tags:
+        - V2
+      operationId: Equipments
+      deprecated: false
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+        - name: Accept
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: Content-Type
+          in: header
+          required: false
+          enum:
+            - application/json
+          type: string
+          description: ''
+        - name: Body
+          in: body
+          required: true
+          description: ''
+          schema:
+            $ref: '#/definitions/EquipmentsRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Response4'
+          examples:
+            application/json:
+              success: true
+              error: null
+              message: Data retrieved.
+              data:
+                - EquipmentId: '0099025195'
+                  EquipmentNo: BM 522
+                  EquipmentName: BMO - BM 522 - BUS
+                  Camera:
+                    - CameraId: 0099025195-01
+                      CameraName: ADAS Camera
+                      CameraStatus: Active
+                    - CameraId: 0099025195-02
+                      CameraName: DSM Camera
+                      CameraStatus: Active
+                    - CameraId: 0099025195-03
+                      CameraName: Cabin Camera
+                      CameraStatus: Active
+                - EquipmentId: 00990253CC
+                  EquipmentNo: BM 572
+                  EquipmentName: BMO - BM 572 - BUS
+                  Camera:
+                    - CameraId: 00990253CC-01
+                      CameraName: ADAS Camera
+                      CameraStatus: Active
+                    - CameraId: 00990253CC-02
+                      CameraName: DSM Camera
+                      CameraStatus: Active
+                    - CameraId: 00990253CC-03
+                      CameraName: Cabin Camera
+                      CameraStatus: Active
+              total_data: 2
+          headers:
+            Date:
+              type: string
+              default: Sun, 06 Mar 2022 17:03:56 GMT
+            Server:
+              type: string
+              default: Apache/2.4.51 (Win64) OpenSSL/1.1.1d PHP/7.4.3
+            X-Powered-By:
+              type: string
+              default: PHP/7.4.3
+            Cache-Control:
+              type: string
+              default: no-cache, private
+            X-RateLimit-Limit:
+              type: string
+              default: '60'
+            X-RateLimit-Remaining:
+              type: string
+              default: '57'
+            Content-Length:
+              type: string
+              default: '761'
+            Keep-Alive:
+              type: string
+              default: timeout=5, max=99
+            Connection:
+              type: string
+              default: Keep-Alive
+  /deviations:
+    post:
+      summary: Deviations
+      tags:
+        - V2
+      operationId: Deviations
+      deprecated: false
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+        - name: Accept
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: Content-Type
+          in: header
+          required: false
+          enum:
+            - application/json
+          type: string
+          description: ''
+        - name: Body
+          in: body
+          required: true
+          description: ''
+          schema:
+            $ref: '#/definitions/DeviationsRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Deviations'
+          examples:
+            application/json:
+              success: true
+              error: null
+              message: Data retrieved.
+              data:
+                - Longitude: '116.569951'
+                  Latitude: '0.292716'
+                  TicketNumber: IPR - PMVV16143-PDSM00000425
+                  DeviationId: 287042
+                  OperatorId: null
+                  OperatorName: ''
+                  EquipmentId: 00990268AE
+                  EquipmentName: IPR - PMVV16143
+                  EquipmentSpeed: 48
+                  unSafeAct: Driver Fatigue
+                  unSafeActUtcDate: '2022-01-01 14:45:04'
+                  ReportTime: '2022-01-01 15:14:51'
+                  Shift: 2
+                  Duration: 7
+                  Direction: East
+                  Angle: 110
+                  SiteName: IPR - HAULING COAL
+                  ValidationStatus: Validated
+                  FollowupStatus: Close
+                  DeviationEvidences:
+                    - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2ODkxL0NIQU5ORUxfMDdfMjAyMjAxMDEyMjQ1MDFfMjAyMjAxMDEyMjQ1MDcubXA0
+                    - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2ODkxL0NIQU5ORUxfMDhfMjAyMjAxMDEyMjQ1MDFfMjAyMjAxMDEyMjQ1MDcubXA0
+                    - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2ODkxL0NIQU5ORUxfMDFfMjAyMjAxMDEyMjQ1MDFfMjAyMjAxMDEyMjQ1MDcubXA0
+                - Longitude: '116.278100'
+                  Latitude: '0.472105'
+                  TicketNumber: IPR - PMVV16117-PDSM00000309
+                  DeviationId: 286926
+                  OperatorId: null
+                  OperatorName: ''
+                  EquipmentId: 009902517A
+                  EquipmentName: IPR - PMVV16117
+                  EquipmentSpeed: 52
+                  unSafeAct: Driver Fatigue
+                  unSafeActUtcDate: '2022-01-01 12:39:24'
+                  ReportTime: '2022-01-01 13:10:46'
+                  Shift: 2
+                  Duration: 7
+                  Direction: East
+                  Angle: 102
+                  SiteName: IPR - HAULING COAL
+                  ValidationStatus: Validated
+                  FollowupStatus: Close
+                  DeviationEvidences:
+                    - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2NzQxL0NIQU5ORUxfMDdfMjAyMjAxMDEyMDM5MjFfMjAyMjAxMDEyMDM5MjcubXA0
+                    - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2NzQxL0NIQU5ORUxfMDhfMjAyMjAxMDEyMDM5MjFfMjAyMjAxMDEyMDM5MjcubXA0
+                    - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2NzQxL0NIQU5ORUxfMDFfMjAyMjAxMDEyMDM5MjFfMjAyMjAxMDEyMDM5MjcubXA0
+                - Longitude: '116.275741'
+                  Latitude: '0.472320'
+                  TicketNumber: IPR - PMVV16117-PDSM00000324
+                  DeviationId: 286941
+                  OperatorId: null
+                  OperatorName: ''
+                  EquipmentId: 009902517A
+                  EquipmentName: IPR - PMVV16117
+                  EquipmentSpeed: 43
+                  unSafeAct: Driver Fatigue
+                  unSafeActUtcDate: '2022-01-01 12:39:05'
+                  ReportTime: '2022-01-01 13:26:35'
+                  Shift: 2
+                  Duration: 7
+                  Direction: East
+                  Angle: 90
+                  SiteName: IPR - HAULING COAL
+                  ValidationStatus: Validated
+                  FollowupStatus: Close
+                  DeviationEvidences:
+                    - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2NzU4L0NIQU5ORUxfMDdfMjAyMjAxMDEyMDM5MDJfMjAyMjAxMDEyMDM5MDgubXA0
+                    - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2NzU4L0NIQU5ORUxfMDhfMjAyMjAxMDEyMDM5MDJfMjAyMjAxMDEyMDM5MDgubXA0
+                    - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2NzU4L0NIQU5ORUxfMDFfMjAyMjAxMDEyMDM5MDJfMjAyMjAxMDEyMDM5MDgubXA0
+                - Longitude: '116.275331'
+                  Latitude: '0.472320'
+                  TicketNumber: IPR - PMVV16117-PDSM00000371
+                  DeviationId: 286988
+                  OperatorId: null
+                  OperatorName: ''
+                  EquipmentId: 009902517A
+                  EquipmentName: IPR - PMVV16117
+                  EquipmentSpeed: 39
+                  unSafeAct: Driver Fatigue
+                  unSafeActUtcDate: '2022-01-01 12:39:01'
+                  ReportTime: '2022-01-01 14:10:09'
+                  Shift: 2
+                  Duration: 7
+                  Direction: East
+                  Angle: 90
+                  SiteName: IPR - HAULING COAL
+                  ValidationStatus: Validated
+                  FollowupStatus: Close
+                  DeviationEvidences:
+                    - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2Nzk1L0NIQU5ORUxfMDdfMjAyMjAxMDEyMDM4NThfMjAyMjAxMDEyMDM5MDQubXA0
+                    - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2Nzk1L0NIQU5ORUxfMDhfMjAyMjAxMDEyMDM4NThfMjAyMjAxMDEyMDM5MDQubXA0
+                    - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2Nzk1L0NIQU5ORUxfMDFfMjAyMjAxMDEyMDM4NThfMjAyMjAxMDEyMDM5MDQubXA0
+              total_data: 4
+          headers:
+            Date:
+              type: string
+              default: Sun, 06 Mar 2022 17:06:43 GMT
+            Server:
+              type: string
+              default: Apache/2.4.51 (Win64) OpenSSL/1.1.1d PHP/7.4.3
+            X-Powered-By:
+              type: string
+              default: PHP/7.4.3
+            Cache-Control:
+              type: string
+              default: no-cache, private
+            X-RateLimit-Limit:
+              type: string
+              default: '60'
+            X-RateLimit-Remaining:
+              type: string
+              default: '59'
+            Content-Length:
+              type: string
+              default: '4911'
+            Keep-Alive:
+              type: string
+              default: timeout=5, max=100
+            Connection:
+              type: string
+              default: Keep-Alive
+  /login:
+    post:
+      summary: Login
+      tags:
+        - Misc
+      operationId: Login
+      deprecated: false
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+        - name: Accept
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: Content-Type
+          in: header
+          required: false
+          enum:
+            - application/json
+          type: string
+          description: ''
+        - name: Body
+          in: body
+          required: true
+          description: ''
+          schema:
+            $ref: '#/definitions/LoginRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Login'
+          examples:
+            application/json:
+              success: true
+              error: null
+              message: Login success.
+              data:
+                Name: Superadmin
+                Username: demo-suadmin
+                EmailAddress: arvin@predict-indonesia.com
+                ApiToken: fe2029e68d1559619f5b8ada9ea1f3426f1c0622b8d474fd6a2b3e5abeff4f64
+                TokenLifetime: '2021-11-30 17:12:24'
+                Access:
+                  TakeAction: true
+                  UploadCoaching: true
+                  CloseTicket: true
+                  ReopenTicket: true
+                Sites:
+                  - SiteId: LMOHAULCOAL
+                    Name: LMO - HAULING COAL
+                  - SiteId: LMOCOALPTR
+                    Name: LMO - COAL PTR
+                  - SiteId: LMOOBHAUL
+                    Name: LMO - OB HAULLER
+                  - SiteId: BMOHAULCOAL
+                    Name: BMO - HAULING COAL
+                  - SiteId: BMOMAINHAUL
+                    Name: BMO - OB HAULLER
+                  - SiteId: BMOHAULCOALSUARAN
+                    Name: BMO - HAULING COAL SUARAN
+                  - SiteId: SDJHAULCOAL
+                    Name: SDJ - HAULING COAL
+                  - SiteId: BUMASDJ
+                    Name: BUMA - SDJ
+                  - SiteId: BMOFUELTRUCK
+                    Name: BMO - FUEL TRUCK
+          headers:
+            Date:
+              type: string
+              default: Mon, 29 Nov 2021 17:12:24 GMT
+            Transfer-Encoding:
+              type: string
+              default: chunked
+            Connection:
+              type: string
+              default: keep-alive
+            cache-control:
+              type: string
+              default: no-cache, private
+            x-ratelimit-limit:
+              type: string
+              default: '60'
+            x-ratelimit-remaining:
+              type: string
+              default: '59'
+            CF-Cache-Status:
+              type: string
+              default: DYNAMIC
+            Report-To:
+              type: string
+              default: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=oyv0ZiMuprA1aspcoKk7HKDe8z9fvykDSrXmbER%2FuFMFh6aPoPP0mQ7xncS2CYye2MiTPBt9qzMXMf05DnkJnkFI67IIBO8%2BLQlpW3Zh%2BZW5HzvXWgIgFD7yfz72QUb1O%2Bqdd%2BmV"}],"group":"cf-nel","max_age":604800}'
+            NEL:
+              type: string
+              default: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+            Server:
+              type: string
+              default: cloudflare
+            CF-RAY:
+              type: string
+              default: 6b5d75f11ca54bb0-SIN
+            Content-Encoding:
+              type: string
+              default: gzip
+            alt-svc:
+              type: string
+              default: h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443"; ma=86400
+definitions:
+  EncodeRequest:
+    title: EncodeRequest
+    example:
+      origin: https://digital-dev-apm-001.azure-api.net
+      username: demo-suadmin
+      password: PredictDSM321+
+    type: object
+    properties:
+      origin:
+        type: string
+      username:
+        type: string
+      password:
+        type: string
+    required:
+      - origin
+      - username
+      - password
+  Response:
+    title: Response
+    example:
+      success: true
+      error: null
+      message: Data retrieved.
+      data: ZGVtby1zdWFkbWluOlByZWRpY3REU00zMjEr
+    type: object
+    properties:
+      success:
+        type: boolean
+      error:
+        type: string
+      message:
+        type: string
+      data:
+        type: string
+    required:
+      - success
+      - error
+      - message
+      - data
+  ErrorPageRequest:
+    title: ErrorPageRequest
+    example:
+      origin: https://digital-dev-apm-001.azure-api.net
+      api_token: ZGVtby1zdWFkbWluOiFQcmVkaWN0RFNNMzIx
+      search: ''
+      size: 100
+    type: object
+    properties:
+      origin:
+        type: string
+      api_token:
+        type: string
+      search:
+        type: string
+      size:
+        type: integer
+        format: int32
+    required:
+      - origin
+      - api_token
+      - search
+      - size
+  Unauthenticated:
+    title: Unauthenticated
+    example:
+      success: false
+      error: Unauthenticated
+      message: Please sign in first.
+    type: object
+    properties:
+      success:
+        type: boolean
+      error:
+        type: string
+      message:
+        type: string
+    required:
+      - success
+      - error
+      - message
+  404PageNotFound1:
+    title: 404PageNotFound1
+    example:
+      success: false
+      error: Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException
+      message: 'The POST method is not supported for this route. Supported methods: GET, HEAD.'
+    type: object
+    properties:
+      success:
+        type: boolean
+      error:
+        type: string
+      message:
+        type: string
+    required:
+      - success
+      - error
+      - message
+  500InternalServerError1:
+    title: 500InternalServerError1
+    example:
+      success: false
+      error: ErrorException
+      message: Internal Server Error.
+    type: object
+    properties:
+      success:
+        type: boolean
+      error:
+        type: string
+      message:
+        type: string
+    required:
+      - success
+      - error
+      - message
+  AlarmTypesRequest:
+    title: AlarmTypesRequest
+    example:
+      origin: https://digital-dev-apm-001.azure-api.net
+      api_token: ZGVtby1zdWFkbWluOlByZWRpY3REU00zMjEr
+      search: ''
+      size: 100
+    type: object
+    properties:
+      origin:
+        type: string
+      api_token:
+        type: string
+      search:
+        type: string
+      size:
+        type: integer
+        format: int32
+    required:
+      - origin
+      - api_token
+      - search
+      - size
+  Response1:
+    title: Response1
+    example:
+      success: true
+      error: null
+      message: Driver retrieved.
+      data:
+        - Camera-covering alarm
+        - Driver Distraction
+        - Driver Fatigue
+        - Forward Collision Warning
+        - High-speed alarm
+        - IO 1
+        - No driver
+        - Phone Detection
+        - Smoking Detection
+        - Video loss alarm
+        - Yawning Detection
+      total_data: 11
+    type: object
+    properties:
+      success:
+        type: boolean
+      error:
+        type: string
+      message:
+        type: string
+      data:
+        type: array
+        items:
+          type: string
+      total_data:
+        type: integer
+        format: int32
+    required:
+      - success
+      - error
+      - message
+      - data
+      - total_data
+  SitesRequest:
+    title: SitesRequest
+    example:
+      origin: https://digital-dev-apm-001.azure-api.net
+      api_token: ZGVtby1zdWFkbWluOlByZWRpY3REU00zMjEr
+      search: ''
+      size: 5
+    type: object
+    properties:
+      origin:
+        type: string
+      api_token:
+        type: string
+      search:
+        type: string
+      size:
+        type: integer
+        format: int32
+    required:
+      - origin
+      - api_token
+      - search
+      - size
+  Response2:
+    title: Response2
+    example:
+      success: true
+      error: null
+      message: Data retrieved.
+      data:
+        - SiteId: BMOBUS
+          Name: BMO - BUS
+        - SiteId: BMOFUELTRUCK
+          Name: BMO - FUEL TRUCK
+        - SiteId: BMOHAULCOAL
+          Name: BMO - HAULING COAL
+        - SiteId: BMOHAULCOALSUARAN
+          Name: BMO - HAULING COAL SUARAN
+        - SiteId: BMOMAINHAUL
+          Name: BMO - OB HAULLER
+      total_data: 5
+    type: object
+    properties:
+      success:
+        type: boolean
+      error:
+        type: string
+      message:
+        type: string
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Datum'
+      total_data:
+        type: integer
+        format: int32
+    required:
+      - success
+      - error
+      - message
+      - data
+      - total_data
+  Datum:
+    title: Datum
+    example:
+      SiteId: BMOBUS
+      Name: BMO - BUS
+    type: object
+    properties:
+      SiteId:
+        type: string
+      Name:
+        type: string
+    required:
+      - SiteId
+      - Name
+  OperatorsRequest:
+    title: OperatorsRequest
+    example:
+      origin: https://digital-dev-apm-001.azure-api.net
+      api_token: ZGVtby1zdWFkbWluOlByZWRpY3REU00zMjEr
+      search: ''
+      size: 5
+    type: object
+    properties:
+      origin:
+        type: string
+      api_token:
+        type: string
+      search:
+        type: string
+      size:
+        type: integer
+        format: int32
+    required:
+      - origin
+      - api_token
+      - search
+      - size
+  Response3:
+    title: Response3
+    example:
+      success: true
+      error: null
+      message: Data retrieved.
+      data:
+        - Name: Semol Nico Titawano
+          OperatorId: 4
+          NIK: '10026867'
+        - Name: Yosua Sambuaga Tumurang
+          OperatorId: 5
+          NIK: '10026868'
+        - Name: Adi Pongsamma
+          OperatorId: 6
+          NIK: '10026509'
+        - Name: Jalif
+          OperatorId: 7
+          NIK: '10026510'
+        - Name: Moh. Aswan
+          OperatorId: 8
+          NIK: '10026511'
+      total_data: 5
+    type: object
+    properties:
+      success:
+        type: boolean
+      error:
+        type: string
+      message:
+        type: string
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Datum1'
+      total_data:
+        type: integer
+        format: int32
+    required:
+      - success
+      - error
+      - message
+      - data
+      - total_data
+  Datum1:
+    title: Datum1
+    example:
+      Name: Semol Nico Titawano
+      OperatorId: 4
+      NIK: '10026867'
+    type: object
+    properties:
+      Name:
+        type: string
+      OperatorId:
+        type: integer
+        format: int32
+      NIK:
+        type: string
+    required:
+      - Name
+      - OperatorId
+      - NIK
+  EquipmentsRequest:
+    title: EquipmentsRequest
+    example:
+      origin: https://digital-dev-apm-001.azure-api.net
+      api_token: ZGVtby1zdWFkbWluOlByZWRpY3REU00zMjEr
+      search: ''
+      siteId:
+        - BMOBUS
+      size: 100
+    type: object
+    properties:
+      origin:
+        type: string
+      api_token:
+        type: string
+      search:
+        type: string
+      siteId:
+        type: array
+        items:
+          type: string
+      size:
+        type: integer
+        format: int32
+    required:
+      - origin
+      - api_token
+      - search
+      - siteId
+      - size
+  Response4:
+    title: Response4
+    example:
+      success: true
+      error: null
+      message: Data retrieved.
+      data:
+        - EquipmentId: '0099025195'
+          EquipmentNo: BM 522
+          EquipmentName: BMO - BM 522 - BUS
+          Camera:
+            - CameraId: 0099025195-01
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: 0099025195-02
+              CameraName: DSM Camera
+              CameraStatus: Active
+            - CameraId: 0099025195-03
+              CameraName: Cabin Camera
+              CameraStatus: Active
+        - EquipmentId: 00990253CC
+          EquipmentNo: BM 572
+          EquipmentName: BMO - BM 572 - BUS
+          Camera:
+            - CameraId: 00990253CC-01
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: 00990253CC-02
+              CameraName: DSM Camera
+              CameraStatus: Active
+            - CameraId: 00990253CC-03
+              CameraName: Cabin Camera
+              CameraStatus: Active
+      total_data: 2
+    type: object
+    properties:
+      success:
+        type: boolean
+      error:
+        type: string
+      message:
+        type: string
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Datum2'
+      total_data:
+        type: integer
+        format: int32
+    required:
+      - success
+      - error
+      - message
+      - data
+      - total_data
+  Datum2:
+    title: Datum2
+    example:
+      EquipmentId: '0099025195'
+      EquipmentNo: BM 522
+      EquipmentName: BMO - BM 522 - BUS
+      Camera:
+        - CameraId: 0099025195-01
+          CameraName: ADAS Camera
+          CameraStatus: Active
+        - CameraId: 0099025195-02
+          CameraName: DSM Camera
+          CameraStatus: Active
+        - CameraId: 0099025195-03
+          CameraName: Cabin Camera
+          CameraStatus: Active
+    type: object
+    properties:
+      EquipmentId:
+        type: string
+      EquipmentNo:
+        type: string
+      EquipmentName:
+        type: string
+      Camera:
+        type: array
+        items:
+          $ref: '#/definitions/Camera'
+    required:
+      - EquipmentId
+      - EquipmentNo
+      - EquipmentName
+      - Camera
+  Camera:
+    title: Camera
+    example:
+      CameraId: 0099025195-01
+      CameraName: ADAS Camera
+      CameraStatus: Active
+    type: object
+    properties:
+      CameraId:
+        type: string
+      CameraName:
+        type: string
+      CameraStatus:
+        type: string
+    required:
+      - CameraId
+      - CameraName
+      - CameraStatus
+  DeviationsRequest:
+    title: DeviationsRequest
+    example:
+      origin: https://digital-dev-apm-001.azure-api.net
+      api_token: ZGVtby1zdWFkbWluOlByZWRpY3REU00zMjEr
+      search: ''
+      StartTime: '2022-01-01 00:00:00'
+      EndTime: '2022-01-01 23:59:59'
+      SiteId: []
+      EquipmentId: []
+      AlarmTypes:
+        - Driver Fatigue
+      ValidationStatus:
+        - Pending
+        - Validated
+      FollowupStatus:
+        - Open
+        - Close
+      OperatorId: []
+      size: 20
+    type: object
+    properties:
+      origin:
+        type: string
+      api_token:
+        type: string
+      search:
+        type: string
+      StartTime:
+        type: string
+      EndTime:
+        type: string
+      SiteId:
+        type: array
+        items:
+          type: string
+      EquipmentId:
+        type: array
+        items:
+          type: string
+      AlarmTypes:
+        type: array
+        items:
+          type: string
+      ValidationStatus:
+        type: array
+        items:
+          type: string
+      FollowupStatus:
+        type: array
+        items:
+          type: string
+      OperatorId:
+        type: array
+        items:
+          type: string
+      size:
+        type: integer
+        format: int32
+    required:
+      - origin
+      - api_token
+      - search
+      - StartTime
+      - EndTime
+      - SiteId
+      - EquipmentId
+      - AlarmTypes
+      - ValidationStatus
+      - FollowupStatus
+      - OperatorId
+      - size
+  Deviations:
+    title: Deviations
+    example:
+      success: true
+      error: null
+      message: Data retrieved.
+      data:
+        - Longitude: '116.569951'
+          Latitude: '0.292716'
+          TicketNumber: IPR - PMVV16143-PDSM00000425
+          DeviationId: 287042
+          OperatorId: null
+          OperatorName: ''
+          EquipmentId: 00990268AE
+          EquipmentName: IPR - PMVV16143
+          EquipmentSpeed: 48
+          unSafeAct: Driver Fatigue
+          unSafeActUtcDate: '2022-01-01 14:45:04'
+          ReportTime: '2022-01-01 15:14:51'
+          Shift: 2
+          Duration: 7
+          Direction: East
+          Angle: 110
+          SiteName: IPR - HAULING COAL
+          ValidationStatus: Validated
+          FollowupStatus: Close
+          DeviationEvidences:
+            - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2ODkxL0NIQU5ORUxfMDdfMjAyMjAxMDEyMjQ1MDFfMjAyMjAxMDEyMjQ1MDcubXA0
+            - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2ODkxL0NIQU5ORUxfMDhfMjAyMjAxMDEyMjQ1MDFfMjAyMjAxMDEyMjQ1MDcubXA0
+            - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2ODkxL0NIQU5ORUxfMDFfMjAyMjAxMDEyMjQ1MDFfMjAyMjAxMDEyMjQ1MDcubXA0
+        - Longitude: '116.278100'
+          Latitude: '0.472105'
+          TicketNumber: IPR - PMVV16117-PDSM00000309
+          DeviationId: 286926
+          OperatorId: null
+          OperatorName: ''
+          EquipmentId: 009902517A
+          EquipmentName: IPR - PMVV16117
+          EquipmentSpeed: 52
+          unSafeAct: Driver Fatigue
+          unSafeActUtcDate: '2022-01-01 12:39:24'
+          ReportTime: '2022-01-01 13:10:46'
+          Shift: 2
+          Duration: 7
+          Direction: East
+          Angle: 102
+          SiteName: IPR - HAULING COAL
+          ValidationStatus: Validated
+          FollowupStatus: Close
+          DeviationEvidences:
+            - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2NzQxL0NIQU5ORUxfMDdfMjAyMjAxMDEyMDM5MjFfMjAyMjAxMDEyMDM5MjcubXA0
+            - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2NzQxL0NIQU5ORUxfMDhfMjAyMjAxMDEyMDM5MjFfMjAyMjAxMDEyMDM5MjcubXA0
+            - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2NzQxL0NIQU5ORUxfMDFfMjAyMjAxMDEyMDM5MjFfMjAyMjAxMDEyMDM5MjcubXA0
+        - Longitude: '116.275741'
+          Latitude: '0.472320'
+          TicketNumber: IPR - PMVV16117-PDSM00000324
+          DeviationId: 286941
+          OperatorId: null
+          OperatorName: ''
+          EquipmentId: 009902517A
+          EquipmentName: IPR - PMVV16117
+          EquipmentSpeed: 43
+          unSafeAct: Driver Fatigue
+          unSafeActUtcDate: '2022-01-01 12:39:05'
+          ReportTime: '2022-01-01 13:26:35'
+          Shift: 2
+          Duration: 7
+          Direction: East
+          Angle: 90
+          SiteName: IPR - HAULING COAL
+          ValidationStatus: Validated
+          FollowupStatus: Close
+          DeviationEvidences:
+            - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2NzU4L0NIQU5ORUxfMDdfMjAyMjAxMDEyMDM5MDJfMjAyMjAxMDEyMDM5MDgubXA0
+            - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2NzU4L0NIQU5ORUxfMDhfMjAyMjAxMDEyMDM5MDJfMjAyMjAxMDEyMDM5MDgubXA0
+            - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2NzU4L0NIQU5ORUxfMDFfMjAyMjAxMDEyMDM5MDJfMjAyMjAxMDEyMDM5MDgubXA0
+        - Longitude: '116.275331'
+          Latitude: '0.472320'
+          TicketNumber: IPR - PMVV16117-PDSM00000371
+          DeviationId: 286988
+          OperatorId: null
+          OperatorName: ''
+          EquipmentId: 009902517A
+          EquipmentName: IPR - PMVV16117
+          EquipmentSpeed: 39
+          unSafeAct: Driver Fatigue
+          unSafeActUtcDate: '2022-01-01 12:39:01'
+          ReportTime: '2022-01-01 14:10:09'
+          Shift: 2
+          Duration: 7
+          Direction: East
+          Angle: 90
+          SiteName: IPR - HAULING COAL
+          ValidationStatus: Validated
+          FollowupStatus: Close
+          DeviationEvidences:
+            - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2Nzk1L0NIQU5ORUxfMDdfMjAyMjAxMDEyMDM4NThfMjAyMjAxMDEyMDM5MDQubXA0
+            - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2Nzk1L0NIQU5ORUxfMDhfMjAyMjAxMDEyMDM4NThfMjAyMjAxMDEyMDM5MDQubXA0
+            - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2Nzk1L0NIQU5ORUxfMDFfMjAyMjAxMDEyMDM4NThfMjAyMjAxMDEyMDM5MDQubXA0
+      total_data: 4
+    type: object
+    properties:
+      success:
+        type: boolean
+      error:
+        type: string
+      message:
+        type: string
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Datum3'
+      total_data:
+        type: integer
+        format: int32
+    required:
+      - success
+      - error
+      - message
+      - data
+      - total_data
+  Datum3:
+    title: Datum3
+    example:
+      Longitude: '116.569951'
+      Latitude: '0.292716'
+      TicketNumber: IPR - PMVV16143-PDSM00000425
+      DeviationId: 287042
+      OperatorId: null
+      OperatorName: ''
+      EquipmentId: 00990268AE
+      EquipmentName: IPR - PMVV16143
+      EquipmentSpeed: 48
+      unSafeAct: Driver Fatigue
+      unSafeActUtcDate: '2022-01-01 14:45:04'
+      ReportTime: '2022-01-01 15:14:51'
+      Shift: 2
+      Duration: 7
+      Direction: East
+      Angle: 110
+      SiteName: IPR - HAULING COAL
+      ValidationStatus: Validated
+      FollowupStatus: Close
+      DeviationEvidences:
+        - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2ODkxL0NIQU5ORUxfMDdfMjAyMjAxMDEyMjQ1MDFfMjAyMjAxMDEyMjQ1MDcubXA0
+        - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2ODkxL0NIQU5ORUxfMDhfMjAyMjAxMDEyMjQ1MDFfMjAyMjAxMDEyMjQ1MDcubXA0
+        - path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2ODkxL0NIQU5ORUxfMDFfMjAyMjAxMDEyMjQ1MDFfMjAyMjAxMDEyMjQ1MDcubXA0
+    type: object
+    properties:
+      Longitude:
+        type: string
+      Latitude:
+        type: string
+      TicketNumber:
+        type: string
+      DeviationId:
+        type: integer
+        format: int32
+      OperatorId:
+        type: string
+      OperatorName:
+        type: string
+      EquipmentId:
+        type: string
+      EquipmentName:
+        type: string
+      EquipmentSpeed:
+        type: integer
+        format: int32
+      unSafeAct:
+        type: string
+      unSafeActUtcDate:
+        type: string
+      ReportTime:
+        type: string
+      Shift:
+        type: integer
+        format: int32
+      Duration:
+        type: integer
+        format: int32
+      Direction:
+        type: string
+      Angle:
+        type: integer
+        format: int32
+      SiteName:
+        type: string
+      ValidationStatus:
+        type: string
+      FollowupStatus:
+        type: string
+      DeviationEvidences:
+        type: array
+        items:
+          $ref: '#/definitions/DeviationEvidence'
+    required:
+      - Longitude
+      - Latitude
+      - TicketNumber
+      - DeviationId
+      - OperatorId
+      - OperatorName
+      - EquipmentId
+      - EquipmentName
+      - EquipmentSpeed
+      - unSafeAct
+      - unSafeActUtcDate
+      - ReportTime
+      - Shift
+      - Duration
+      - Direction
+      - Angle
+      - SiteName
+      - ValidationStatus
+      - FollowupStatus
+      - DeviationEvidences
+  DeviationEvidence:
+    title: DeviationEvidence
+    example:
+      path: http://147.139.186.204:12057/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQav62OZEv5FmQhFUqTjrDPjg%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjItMDEtMDEvNDA2ODkxL0NIQU5ORUxfMDdfMjAyMjAxMDEyMjQ1MDFfMjAyMjAxMDEyMjQ1MDcubXA0
+    type: object
+    properties:
+      path:
+        type: string
+    required:
+      - path
+  LoginRequest:
+    title: LoginRequest
+    example:
+      username: demo-suadmin
+      password: PredictDSM321+
+    type: object
+    properties:
+      username:
+        type: string
+      password:
+        type: string
+    required:
+      - username
+      - password
+  Login:
+    title: Login
+    example:
+      success: true
+      error: null
+      message: Login success.
+      data:
+        Name: Superadmin
+        Username: demo-suadmin
+        EmailAddress: arvin@predict-indonesia.com
+        ApiToken: fe2029e68d1559619f5b8ada9ea1f3426f1c0622b8d474fd6a2b3e5abeff4f64
+        TokenLifetime: '2021-11-30 17:12:24'
+        Access:
+          TakeAction: true
+          UploadCoaching: true
+          CloseTicket: true
+          ReopenTicket: true
+        Sites:
+          - SiteId: LMOHAULCOAL
+            Name: LMO - HAULING COAL
+          - SiteId: LMOCOALPTR
+            Name: LMO - COAL PTR
+          - SiteId: LMOOBHAUL
+            Name: LMO - OB HAULLER
+          - SiteId: BMOHAULCOAL
+            Name: BMO - HAULING COAL
+          - SiteId: BMOMAINHAUL
+            Name: BMO - OB HAULLER
+          - SiteId: BMOHAULCOALSUARAN
+            Name: BMO - HAULING COAL SUARAN
+          - SiteId: SDJHAULCOAL
+            Name: SDJ - HAULING COAL
+          - SiteId: BUMASDJ
+            Name: BUMA - SDJ
+          - SiteId: BMOFUELTRUCK
+            Name: BMO - FUEL TRUCK
+    type: object
+    properties:
+      success:
+        type: boolean
+      error:
+        type: string
+      message:
+        type: string
+      data:
+        $ref: '#/definitions/Data'
+    required:
+      - success
+      - error
+      - message
+      - data
+  Data:
+    title: Data
+    example:
+      Name: Superadmin
+      Username: demo-suadmin
+      EmailAddress: arvin@predict-indonesia.com
+      ApiToken: fe2029e68d1559619f5b8ada9ea1f3426f1c0622b8d474fd6a2b3e5abeff4f64
+      TokenLifetime: '2021-11-30 17:12:24'
+      Access:
+        TakeAction: true
+        UploadCoaching: true
+        CloseTicket: true
+        ReopenTicket: true
+      Sites:
+        - SiteId: LMOHAULCOAL
+          Name: LMO - HAULING COAL
+        - SiteId: LMOCOALPTR
+          Name: LMO - COAL PTR
+        - SiteId: LMOOBHAUL
+          Name: LMO - OB HAULLER
+        - SiteId: BMOHAULCOAL
+          Name: BMO - HAULING COAL
+        - SiteId: BMOMAINHAUL
+          Name: BMO - OB HAULLER
+        - SiteId: BMOHAULCOALSUARAN
+          Name: BMO - HAULING COAL SUARAN
+        - SiteId: SDJHAULCOAL
+          Name: SDJ - HAULING COAL
+        - SiteId: BUMASDJ
+          Name: BUMA - SDJ
+        - SiteId: BMOFUELTRUCK
+          Name: BMO - FUEL TRUCK
+    type: object
+    properties:
+      Name:
+        type: string
+      Username:
+        type: string
+      EmailAddress:
+        type: string
+      ApiToken:
+        type: string
+      TokenLifetime:
+        type: string
+      Access:
+        $ref: '#/definitions/Access'
+      Sites:
+        type: array
+        items:
+          $ref: '#/definitions/Site'
+    required:
+      - Name
+      - Username
+      - EmailAddress
+      - ApiToken
+      - TokenLifetime
+      - Access
+      - Sites
+  Access:
+    title: Access
+    example:
+      TakeAction: true
+      UploadCoaching: true
+      CloseTicket: true
+      ReopenTicket: true
+    type: object
+    properties:
+      TakeAction:
+        type: boolean
+      UploadCoaching:
+        type: boolean
+      CloseTicket:
+        type: boolean
+      ReopenTicket:
+        type: boolean
+    required:
+      - TakeAction
+      - UploadCoaching
+      - CloseTicket
+      - ReopenTicket
+  Site:
+    title: Site
+    example:
+      SiteId: LMOHAULCOAL
+      Name: LMO - HAULING COAL
+    type: object
+    properties:
+      SiteId:
+        type: string
+      Name:
+        type: string
+    required:
+      - SiteId
+      - Name
+  SitesRequest1:
+    title: SitesRequest1
+    example:
+      api_token: fe2029e68d1559619f5b8ada9ea1f3426f1c0622b8d474fd6a2b3e5abeff4f64
+      search: ''
+      size: 5
+    type: object
+    properties:
+      api_token:
+        type: string
+      search:
+        type: string
+      size:
+        type: integer
+        format: int32
+    required:
+      - api_token
+      - search
+      - size
+  Sites:
+    title: Sites
+    example:
+      success: true
+      error: null
+      message: Data retrieved.
+      data:
+        - SiteId: LMOHAULCOAL
+          Name: LMO - HAULING COAL
+        - SiteId: LMOCOALPTR
+          Name: LMO - COAL PTR
+        - SiteId: LMOOBHAUL
+          Name: LMO - OB HAULLER
+        - SiteId: BMOHAULCOAL
+          Name: BMO - HAULING COAL
+        - SiteId: BMOMAINHAUL
+          Name: BMO - OB HAULLER
+    type: object
+    properties:
+      success:
+        type: boolean
+      error:
+        type: string
+      message:
+        type: string
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Data1'
+    required:
+      - success
+      - error
+      - message
+      - data
+  Data1:
+    title: Data1
+    example:
+      SiteId: LMOHAULCOAL
+      Name: LMO - HAULING COAL
+    type: object
+    properties:
+      SiteId:
+        type: string
+      Name:
+        type: string
+    required:
+      - SiteId
+      - Name
+  AlarmTypesRequest1:
+    title: AlarmTypesRequest1
+    example:
+      search: ''
+      size: 100
+    type: object
+    properties:
+      search:
+        type: string
+      size:
+        type: integer
+        format: int32
+    required:
+      - search
+      - size
+  AlarmTypes:
+    title: AlarmTypes
+    example:
+      success: true
+      error: null
+      message: Driver retrieved.
+      data:
+        - Camera-covering alarm
+        - Driver Distraction
+        - Driver Fatigue
+        - Forward Collision Warning
+        - High-speed alarm
+        - IO 1
+        - No driver
+        - Phone Detection
+        - Smoking Detection
+        - Video loss alarm
+        - Yawning Detection
+    type: object
+    properties:
+      success:
+        type: boolean
+      error:
+        type: string
+      message:
+        type: string
+      data:
+        type: array
+        items:
+          type: string
+    required:
+      - success
+      - error
+      - message
+      - data
+  OperatorsRequest1:
+    title: OperatorsRequest1
+    example:
+      search: ''
+      size: 5
+    type: object
+    properties:
+      search:
+        type: string
+      size:
+        type: integer
+        format: int32
+    required:
+      - search
+      - size
+  Operators:
+    title: Operators
+    example:
+      success: true
+      error: null
+      message: Data retrieved.
+      data:
+        - Name: Semol Nico Titawano
+          OperatorId: 4
+          NIK: '10026867'
+        - Name: Yosua Sambuaga Tumurang
+          OperatorId: 5
+          NIK: '10026868'
+        - Name: Adi Pongsamma
+          OperatorId: 6
+          NIK: '10026509'
+        - Name: Jalif
+          OperatorId: 7
+          NIK: '10026510'
+        - Name: Moh. Aswan
+          OperatorId: 8
+          NIK: '10026511'
+    type: object
+    properties:
+      success:
+        type: boolean
+      error:
+        type: string
+      message:
+        type: string
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Data2'
+    required:
+      - success
+      - error
+      - message
+      - data
+  Data2:
+    title: Data2
+    example:
+      Name: Semol Nico Titawano
+      OperatorId: 4
+      NIK: '10026867'
+    type: object
+    properties:
+      Name:
+        type: string
+      OperatorId:
+        type: integer
+        format: int32
+      NIK:
+        type: string
+    required:
+      - Name
+      - OperatorId
+      - NIK
+  EquipmentsRequest1:
+    title: EquipmentsRequest1
+    example:
+      api_token: fe2029e68d1559619f5b8ada9ea1f3426f1c0622b8d474fd6a2b3e5abeff4f64
+      search: ''
+      siteId: []
+      size: 100
+    type: object
+    properties:
+      api_token:
+        type: string
+      search:
+        type: string
+      siteId:
+        type: array
+        items:
+          type: string
+      size:
+        type: integer
+        format: int32
+    required:
+      - api_token
+      - search
+      - siteId
+      - size
+  Equipments:
+    title: Equipments
+    example:
+      success: true
+      error: null
+      message: Data retrieved.
+      data:
+        - EquipmentId: 009902522E
+          EquipmentNo: null
+          EquipmentName: LMO - DTMB48028
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990253C9
+          EquipmentNo: null
+          EquipmentName: LMO - DTMB48029
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990250B6
+          EquipmentNo: null
+          EquipmentName: LMO - PMSC58019
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990250DB
+          EquipmentNo: null
+          EquipmentName: LMO - PMSC58009
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990251FD
+          EquipmentNo: null
+          EquipmentName: LMO - PMMB33050
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990250BB
+          EquipmentNo: null
+          EquipmentName: LMO - DTMB48018
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 009902511F
+          EquipmentNo: null
+          EquipmentName: LMO - DTMB48003
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990250C5
+          EquipmentNo: null
+          EquipmentName: LMO - PMMB33047
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '00990252E1'
+          EquipmentNo: null
+          EquipmentName: LMO - DTMB48021
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990253C1
+          EquipmentNo: null
+          EquipmentName: LMO - DTMB48024
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025178'
+          EquipmentNo: null
+          EquipmentName: LMO - DTMB48015
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990251C3
+          EquipmentNo: null
+          EquipmentName: LMO - PMSC58011
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990251BE
+          EquipmentNo: null
+          EquipmentName: LMO - PMMB33046
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990250ED
+          EquipmentNo: null
+          EquipmentName: LMO - DTMB48026
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990251B0
+          EquipmentNo: null
+          EquipmentName: LMO - DTMB48023
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990251AB
+          EquipmentNo: null
+          EquipmentName: LMO - PMMB33034
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990252A8
+          EquipmentNo: null
+          EquipmentName: LMO - DTMB48030
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025331'
+          EquipmentNo: null
+          EquipmentName: LMO - PMSC58008
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025281'
+          EquipmentNo: null
+          EquipmentName: LMO - DTMB48010
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025225'
+          EquipmentNo: null
+          EquipmentName: EX - LMO - HDCT7177
+          Camera: []
+        - EquipmentId: '00990257E4'
+          EquipmentNo: null
+          EquipmentName: LMO - PMSC58010
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025128'
+          EquipmentNo: null
+          EquipmentName: LMO - DTMB48027
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990252F1
+          EquipmentNo: null
+          EquipmentName: LMO - DTMB48022
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025289'
+          EquipmentNo: null
+          EquipmentName: LMO - PMSC58007
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 009902524C
+          EquipmentNo: null
+          EquipmentName: LMO - PMMB33057
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990253BE
+          EquipmentNo: null
+          EquipmentName: LMO - DTMB48031
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025348'
+          EquipmentNo: null
+          EquipmentName: LMO - DTMB48025
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990250BE
+          EquipmentNo: null
+          EquipmentName: LMO - DTMB48014
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025350'
+          EquipmentNo: null
+          EquipmentName: LMO - PMMB33039
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990253C3
+          EquipmentNo: null
+          EquipmentName: EX - LMO - PMMB33052
+          Camera: []
+        - EquipmentId: 009902515F
+          EquipmentNo: null
+          EquipmentName: LMO - PMMB33061
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025313'
+          EquipmentNo: null
+          EquipmentName: LMO - PMMB33055
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990252D4
+          EquipmentNo: null
+          EquipmentName: LMO - PMSC58013
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099012627'
+          EquipmentNo: null
+          EquipmentName: LMO - PMSC58018
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990125D8
+          EquipmentNo: null
+          EquipmentName: LMO - PMSC58001
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 0099014C31
+          EquipmentNo: null
+          EquipmentName: LMO - DTMB48020
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 0099014DB8
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT7162
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099012629'
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT7234
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 0099014C2C
+          EquipmentNo: null
+          EquipmentName: EX - LMO - HDCT7324
+          Camera: []
+        - EquipmentId: 0099014CB2
+          EquipmentNo: null
+          EquipmentName: LMO - HDKM248
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 0099014C45
+          EquipmentNo: null
+          EquipmentName: LMO - HDKM277
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 0099014D77
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT7113
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099012583'
+          EquipmentNo: null
+          EquipmentName: LMO - HDKM297
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: Cabin Camera
+              CameraStatus: Active
+        - EquipmentId: 00990250BF
+          EquipmentNo: null
+          EquipmentName: BMO - PMSC58017
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: Cabin Camera
+              CameraStatus: Active
+        - EquipmentId: 00990252F0
+          EquipmentNo: null
+          EquipmentName: LMO - HDKM380
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990253BB
+          EquipmentNo: null
+          EquipmentName: LMO - HDKM299
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990251B5
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT7214
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 009902525E
+          EquipmentNo: null
+          EquipmentName: EX - LMO - HDCT7177
+          Camera: []
+        - EquipmentId: 009902517D
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT7194
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 009902537E
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT8062
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990251EE
+          EquipmentNo: null
+          EquipmentName: LMO - HDKM224
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990253A7
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT7153
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025384'
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT7112
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990252FE
+          EquipmentNo: null
+          EquipmentName: LMO - HDKM398
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990250FD
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT7046
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025315'
+          EquipmentNo: null
+          EquipmentName: LMO - HDKM404
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025279'
+          EquipmentNo: null
+          EquipmentName: LMO - HDKM290
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025165'
+          EquipmentNo: null
+          EquipmentName: LMO - HDKM450
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025273'
+          EquipmentNo: null
+          EquipmentName: LMO - HDKM406
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 009902511E
+          EquipmentNo: null
+          EquipmentName: LMO - HDKM408
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025148'
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT8086
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 009902510F
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT7152
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 009902515B
+          EquipmentNo: null
+          EquipmentName: LMO - PMSC58012
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '00990250E8'
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT7179
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025283'
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT9013
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099023095'
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT7155
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025280'
+          EquipmentNo: null
+          EquipmentName: LMO - HDKM428
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990250FC
+          EquipmentNo: null
+          EquipmentName: LMO - HDKM289
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990251AD
+          EquipmentNo: null
+          EquipmentName: LMO - HDKM233
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025193'
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT7060
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025341'
+          EquipmentNo: null
+          EquipmentName: LMO - HDKM425
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025265'
+          EquipmentNo: null
+          EquipmentName: LMO - HDKM426
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: Cabin Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025338'
+          EquipmentNo: null
+          EquipmentName: LMO - HDKM331
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: Cabin Camera
+              CameraStatus: Active
+        - EquipmentId: 009902512F
+          EquipmentNo: null
+          EquipmentName: BMO - DTVV44116
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990251F6
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT7240
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990251D7
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT7192
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025270'
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT9047
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '00990252E2'
+          EquipmentNo: null
+          EquipmentName: BMO - DTVV44145
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 009902513C
+          EquipmentNo: null
+          EquipmentName: LMO - HDKM295
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025182'
+          EquipmentNo: null
+          EquipmentName: LMO - HDKM315
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 009902534A
+          EquipmentNo: null
+          EquipmentName: LMO - HDKM451
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990250D5
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT7044
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 009902518A
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT7161
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990251F4
+          EquipmentNo: null
+          EquipmentName: LMO - HDKM344
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 009902513E
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT7323
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990250C2
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT7159
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: Cabin Camera
+              CameraStatus: Active
+        - EquipmentId: 00990253B3
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT7189
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990250EE
+          EquipmentNo: null
+          EquipmentName: LMO - HDKM316
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: Cabin Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025394'
+          EquipmentNo: null
+          EquipmentName: LMO - HDKM381
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025142'
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT7173
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 009902528F
+          EquipmentNo: null
+          EquipmentName: BMO - DTVV44143
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990251B3
+          EquipmentNo: null
+          EquipmentName: BMO - DTVV44117
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025184'
+          EquipmentNo: null
+          EquipmentName: BMO - PMVV16095
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: Cabin Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025241'
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT7172
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025360'
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT7160
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 009902519E
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT7154
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025388'
+          EquipmentNo: null
+          EquipmentName: BMO - FTVV44008
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 009902518D
+          EquipmentNo: null
+          EquipmentName: LMO - HDCT8057
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+        - EquipmentId: 00990250B8
+          EquipmentNo: null
+          EquipmentName: LMO - HDKM431
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: Cabin Camera
+              CameraStatus: Active
+        - EquipmentId: '0099025239'
+          EquipmentNo: null
+          EquipmentName: LMO - HDKM429
+          Camera:
+            - CameraId: null
+              CameraName: ADAS Camera
+              CameraStatus: Active
+            - CameraId: null
+              CameraName: DSM Camera
+              CameraStatus: Active
+    type: object
+    properties:
+      success:
+        type: boolean
+      error:
+        type: string
+      message:
+        type: string
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Data3'
+    required:
+      - success
+      - error
+      - message
+      - data
+  Data3:
+    title: Data3
+    example:
+      EquipmentId: 009902522E
+      EquipmentNo: null
+      EquipmentName: LMO - DTMB48028
+      Camera:
+        - CameraId: null
+          CameraName: ADAS Camera
+          CameraStatus: Active
+        - CameraId: null
+          CameraName: DSM Camera
+          CameraStatus: Active
+    type: object
+    properties:
+      EquipmentId:
+        type: string
+      EquipmentNo:
+        type: string
+      EquipmentName:
+        type: string
+      Camera:
+        type: array
+        items:
+          $ref: '#/definitions/Camera1'
+    required:
+      - EquipmentId
+      - EquipmentNo
+      - EquipmentName
+      - Camera
+  Camera1:
+    title: Camera1
+    example:
+      CameraId: null
+      CameraName: ADAS Camera
+      CameraStatus: Active
+    type: object
+    properties:
+      CameraId:
+        type: string
+      CameraName:
+        type: string
+      CameraStatus:
+        type: string
+  DeviationsRequest1:
+    title: DeviationsRequest1
+    example:
+      api_token: fe2029e68d1559619f5b8ada9ea1f3426f1c0622b8d474fd6a2b3e5abeff4f64
+      search: ''
+      StartTime: ''
+      EndTime: ''
+      SiteId: []
+      EquipmentId: []
+      AlarmTypes: []
+      ValidationStatus:
+        - Pending
+        - Validated
+      FollowupStatus:
+        - Open
+        - Close
+      OperatorId: []
+      size: 20
+    type: object
+    properties:
+      api_token:
+        type: string
+      search:
+        type: string
+      StartTime:
+        type: string
+      EndTime:
+        type: string
+      SiteId:
+        type: array
+        items:
+          type: string
+      EquipmentId:
+        type: array
+        items:
+          type: string
+      AlarmTypes:
+        type: array
+        items:
+          type: string
+      ValidationStatus:
+        type: array
+        items:
+          type: string
+      FollowupStatus:
+        type: array
+        items:
+          type: string
+      OperatorId:
+        type: array
+        items:
+          type: string
+      size:
+        type: integer
+        format: int32
+    required:
+      - api_token
+      - search
+      - StartTime
+      - EndTime
+      - SiteId
+      - EquipmentId
+      - AlarmTypes
+      - ValidationStatus
+      - FollowupStatus
+      - OperatorId
+      - size
+  Deviations1:
+    title: Deviations1
+    example:
+      success: true
+      error: null
+      message: Data retrieved.
+      data:
+        - Longitude: '117.433011'
+          Latitude: '2.020575'
+          TicketNumber: BMO - DTVV44151-PDSM00044615
+          DeviationId: 242540
+          OperatorId: null
+          OperatorName: ''
+          EquipmentId: 009902521F
+          EquipmentName: BMO - DTVV44151
+          EquipmentSpeed: 63
+          unSafeAct: High-speed alarm
+          unSafeActUtcDate: '2021-11-30 02:22:41'
+          ReportTime: '2021-11-30 02:23:40'
+          Shift: 1
+          Duration: 7
+          Direction: South West
+          Angle: 228
+          SiteName: BMO - HAULING COAL
+          ValidationStatus: Pending
+          FollowupStatus: Open
+          DeviationEvidences:
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDkwL0NIQU5ORUxfMDdfMjAyMTExMzAxMDIyMzhfMjAyMTExMzAxMDIyNDQubXA0
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDkwL0NIQU5ORUxfMDhfMjAyMTExMzAxMDIyMzhfMjAyMTExMzAxMDIyNDQubXA0
+        - Longitude: '117.447325'
+          Latitude: '2.028921'
+          TicketNumber: BMO - DTVV44102-PDSM00044616
+          DeviationId: 242541
+          OperatorId: null
+          OperatorName: ''
+          EquipmentId: 00990251DD
+          EquipmentName: BMO - DTVV44102
+          EquipmentSpeed: 63
+          unSafeAct: High-speed alarm
+          unSafeActUtcDate: '2021-11-30 02:22:25'
+          ReportTime: '2021-11-30 02:23:04'
+          Shift: 1
+          Duration: 7
+          Direction: North East
+          Angle: 45
+          SiteName: BMO - HAULING COAL
+          ValidationStatus: Pending
+          FollowupStatus: Open
+          DeviationEvidences:
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDg4L0NIQU5ORUxfMDdfMjAyMTExMzAxMDIyMjJfMjAyMTExMzAxMDIyMjgubXA0
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDg4L0NIQU5ORUxfMDhfMjAyMTExMzAxMDIyMjJfMjAyMTExMzAxMDIyMjgubXA0
+        - Longitude: '117.447943'
+          Latitude: '2.029540'
+          TicketNumber: BMO - DTVV44112-PDSM00044617
+          DeviationId: 242542
+          OperatorId: null
+          OperatorName: ''
+          EquipmentId: 009902531D
+          EquipmentName: BMO - DTVV44112
+          EquipmentSpeed: 63
+          unSafeAct: High-speed alarm
+          unSafeActUtcDate: '2021-11-30 02:19:39'
+          ReportTime: '2021-11-30 02:20:35'
+          Shift: 1
+          Duration: 7
+          Direction: North East
+          Angle: 44
+          SiteName: BMO - HAULING COAL
+          ValidationStatus: Pending
+          FollowupStatus: Open
+          DeviationEvidences:
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDgyL0NIQU5ORUxfMDdfMjAyMTExMzAxMDE5MzZfMjAyMTExMzAxMDE5NDIubXA0
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDgyL0NIQU5ORUxfMDhfMjAyMTExMzAxMDE5MzZfMjAyMTExMzAxMDE5NDIubXA0
+        - Longitude: '115.646171'
+          Latitude: '-3.729052'
+          TicketNumber: SDJ - DTVV44154-PDSM00044609
+          DeviationId: 242534
+          OperatorId: null
+          OperatorName: ''
+          EquipmentId: 00990268CB
+          EquipmentName: SDJ - DTVV44154
+          EquipmentSpeed: 31
+          unSafeAct: Forward Collision Warning
+          unSafeActUtcDate: '2021-11-30 02:15:18'
+          ReportTime: '2021-11-30 02:16:07'
+          Shift: 1
+          Duration: 7
+          Direction: West
+          Angle: 271
+          SiteName: SDJ - HAULING COAL
+          ValidationStatus: Validated
+          FollowupStatus: Close
+          DeviationEvidences:
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDcyL0NIQU5ORUxfMDdfMjAyMTExMzAxMDE1MTVfMjAyMTExMzAxMDE1MjEubXA0
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDcyL0NIQU5ORUxfMDhfMjAyMTExMzAxMDE1MTVfMjAyMTExMzAxMDE1MjEubXA0
+        - Longitude: '117.465253'
+          Latitude: '2.032835'
+          TicketNumber: BMO - PMMB33035-PDSM00044618
+          DeviationId: 242543
+          OperatorId: null
+          OperatorName: ''
+          EquipmentId: 00990252B9
+          EquipmentName: BMO - PMMB33035
+          EquipmentSpeed: 63
+          unSafeAct: High-speed alarm
+          unSafeActUtcDate: '2021-11-30 02:07:11'
+          ReportTime: '2021-11-30 02:24:22'
+          Shift: 1
+          Duration: 7
+          Direction: East
+          Angle: 102
+          SiteName: BMO - HAULING COAL SUARAN
+          ValidationStatus: Pending
+          FollowupStatus: Open
+          DeviationEvidences:
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDg5L0NIQU5ORUxfMDdfMjAyMTExMzAxMDA3MDhfMjAyMTExMzAxMDA3MTQubXA0
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDg5L0NIQU5ORUxfMDhfMjAyMTExMzAxMDA3MDhfMjAyMTExMzAxMDA3MTQubXA0
+        - Longitude: '117.471035'
+          Latitude: '2.031370'
+          TicketNumber: BMO - PMSC58020-PDSM00044597
+          DeviationId: 242522
+          OperatorId: null
+          OperatorName: ''
+          EquipmentId: '0099025226'
+          EquipmentName: BMO - PMSC58020
+          EquipmentSpeed: 63
+          unSafeAct: High-speed alarm
+          unSafeActUtcDate: '2021-11-30 02:06:42'
+          ReportTime: '2021-11-30 02:07:34'
+          Shift: 1
+          Duration: 7
+          Direction: West
+          Angle: 276
+          SiteName: BMO - HAULING COAL SUARAN
+          ValidationStatus: Pending
+          FollowupStatus: Open
+          DeviationEvidences:
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDU2L0NIQU5ORUxfMDdfMjAyMTExMzAxMDA2MzlfMjAyMTExMzAxMDA2NDUubXA0
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDU2L0NIQU5ORUxfMDhfMjAyMTExMzAxMDA2MzlfMjAyMTExMzAxMDA2NDUubXA0
+        - Longitude: '117.441115'
+          Latitude: '2.025541'
+          TicketNumber: BMO - DTVV44104-PDSM00044598
+          DeviationId: 242523
+          OperatorId: null
+          OperatorName: ''
+          EquipmentId: 009902527F
+          EquipmentName: BMO - DTVV44104
+          EquipmentSpeed: 63
+          unSafeAct: High-speed alarm
+          unSafeActUtcDate: '2021-11-30 02:06:09'
+          ReportTime: '2021-11-30 02:06:58'
+          Shift: 1
+          Duration: 7
+          Direction: West
+          Angle: 262
+          SiteName: BMO - HAULING COAL
+          ValidationStatus: Pending
+          FollowupStatus: Open
+          DeviationEvidences:
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDUyL0NIQU5ORUxfMDdfMjAyMTExMzAxMDA2MDZfMjAyMTExMzAxMDA2MTIubXA0
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDUyL0NIQU5ORUxfMDhfMjAyMTExMzAxMDA2MDZfMjAyMTExMzAxMDA2MTIubXA0
+        - Longitude: '115.644148'
+          Latitude: '-3.703999'
+          TicketNumber: SDJ - DTVV44141-PDSM00044599
+          DeviationId: 242524
+          OperatorId: null
+          OperatorName: ''
+          EquipmentId: '0099026860'
+          EquipmentName: SDJ - DTVV44141
+          EquipmentSpeed: 63
+          unSafeAct: High-speed alarm
+          unSafeActUtcDate: '2021-11-30 02:04:22'
+          ReportTime: '2021-11-30 02:08:11'
+          Shift: 1
+          Duration: 7
+          Direction: North
+          Angle: 359
+          SiteName: SDJ - HAULING COAL
+          ValidationStatus: Pending
+          FollowupStatus: Open
+          DeviationEvidences:
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDU1L0NIQU5ORUxfMDdfMjAyMTExMzAxMDA0MTlfMjAyMTExMzAxMDA0MjUubXA0
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDU1L0NIQU5ORUxfMDhfMjAyMTExMzAxMDA0MTlfMjAyMTExMzAxMDA0MjUubXA0
+        - Longitude: '0.000000'
+          Latitude: '0.000000'
+          TicketNumber: SDJ - DTSC41043-PDSM00044607
+          DeviationId: 242532
+          OperatorId: null
+          OperatorName: ''
+          EquipmentId: 00990268FD
+          EquipmentName: SDJ - DTSC41043
+          EquipmentSpeed: 0
+          unSafeAct: Video loss alarm
+          unSafeActUtcDate: '2021-11-30 01:59:13'
+          ReportTime: '2021-11-30 02:14:52'
+          Shift: 1
+          Duration: 7
+          Direction: North
+          Angle: 0
+          SiteName: SDJ - HAULING COAL
+          ValidationStatus: Pending
+          FollowupStatus: Open
+          DeviationEvidences: []
+        - Longitude: '0.000000'
+          Latitude: '0.000000'
+          TicketNumber: LMO - DTMB48025-PDSM00044610
+          DeviationId: 242535
+          OperatorId: null
+          OperatorName: ''
+          EquipmentId: '0099025348'
+          EquipmentName: LMO - DTMB48025
+          EquipmentSpeed: 0
+          unSafeAct: Video loss alarm
+          unSafeActUtcDate: '2021-11-30 01:58:11'
+          ReportTime: '2021-11-30 02:18:13'
+          Shift: 1
+          Duration: 7
+          Direction: North
+          Angle: 0
+          SiteName: LMO - HAULING COAL
+          ValidationStatus: Pending
+          FollowupStatus: Open
+          DeviationEvidences: []
+        - Longitude: '117.439261'
+          Latitude: '2.025438'
+          TicketNumber: BMO - DTVV44056-PDSM00044611
+          DeviationId: 242536
+          OperatorId: null
+          OperatorName: ''
+          EquipmentId: 00990252EF
+          EquipmentName: BMO - DTVV44056
+          EquipmentSpeed: 63
+          unSafeAct: High-speed alarm
+          unSafeActUtcDate: '2021-11-30 01:53:45'
+          ReportTime: '2021-11-30 02:16:09'
+          Shift: 1
+          Duration: 7
+          Direction: West
+          Angle: 261
+          SiteName: BMO - HAULING COAL
+          ValidationStatus: Pending
+          FollowupStatus: Open
+          DeviationEvidences:
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDc0L0NIQU5ORUxfMDdfMjAyMTExMzAwOTUzNDJfMjAyMTExMzAwOTUzNDgubXA0
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDc0L0NIQU5ORUxfMDhfMjAyMTExMzAwOTUzNDJfMjAyMTExMzAwOTUzNDgubXA0
+        - Longitude: '117.569270'
+          Latitude: '2.006358'
+          TicketNumber: BMO - PMMB33051-PDSM00044619
+          DeviationId: 242544
+          OperatorId: null
+          OperatorName: ''
+          EquipmentId: 00990251CF
+          EquipmentName: BMO - PMMB33051
+          EquipmentSpeed: 63
+          unSafeAct: High-speed alarm
+          unSafeActUtcDate: '2021-11-30 01:51:59'
+          ReportTime: '2021-11-30 02:22:40'
+          Shift: 1
+          Duration: 7
+          Direction: East
+          Angle: 84
+          SiteName: BMO - HAULING COAL SUARAN
+          ValidationStatus: Pending
+          FollowupStatus: Open
+          DeviationEvidences:
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDg3L0NIQU5ORUxfMDdfMjAyMTExMzAwOTUxNTZfMjAyMTExMzAwOTUyMDIubXA0
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDg3L0NIQU5ORUxfMDhfMjAyMTExMzAwOTUxNTZfMjAyMTExMzAwOTUyMDIubXA0
+        - Longitude: '117.563840'
+          Latitude: '2.006815'
+          TicketNumber: BMO - PMMB33051-PDSM00044600
+          DeviationId: 242525
+          OperatorId: null
+          OperatorName: ''
+          EquipmentId: 00990251CF
+          EquipmentName: BMO - PMMB33051
+          EquipmentSpeed: 63
+          unSafeAct: High-speed alarm
+          unSafeActUtcDate: '2021-11-30 01:51:23'
+          ReportTime: '2021-11-30 02:07:12'
+          Shift: 1
+          Duration: 7
+          Direction: East
+          Angle: 105
+          SiteName: BMO - HAULING COAL SUARAN
+          ValidationStatus: Pending
+          FollowupStatus: Open
+          DeviationEvidences:
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDU0L0NIQU5ORUxfMDdfMjAyMTExMzAwOTUxMjBfMjAyMTExMzAwOTUxMjYubXA0
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDU0L0NIQU5ORUxfMDhfMjAyMTExMzAwOTUxMjBfMjAyMTExMzAwOTUxMjYubXA0
+        - Longitude: '117.436813'
+          Latitude: '2.024223'
+          TicketNumber: BMO - DTVV44118-PDSM00044578
+          DeviationId: 242503
+          OperatorId: null
+          OperatorName: ''
+          EquipmentId: '0099025189'
+          EquipmentName: BMO - DTVV44118
+          EquipmentSpeed: 63
+          unSafeAct: High-speed alarm
+          unSafeActUtcDate: '2021-11-30 01:50:20'
+          ReportTime: '2021-11-30 01:51:07'
+          Shift: 1
+          Duration: 7
+          Direction: South West
+          Angle: 222
+          SiteName: BMO - HAULING COAL
+          ValidationStatus: Pending
+          FollowupStatus: Open
+          DeviationEvidences:
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDIwL0NIQU5ORUxfMDdfMjAyMTExMzAwOTUwMTdfMjAyMTExMzAwOTUwMjMubXA0
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDIwL0NIQU5ORUxfMDhfMjAyMTExMzAwOTUwMTdfMjAyMTExMzAwOTUwMjMubXA0
+        - Longitude: '117.546378'
+          Latitude: '2.011311'
+          TicketNumber: BMO - PMSC58021-PDSM00044579
+          DeviationId: 242504
+          OperatorId: null
+          OperatorName: ''
+          EquipmentId: '0099025192'
+          EquipmentName: BMO - PMSC58021
+          EquipmentSpeed: 12
+          unSafeAct: Driver Distraction
+          unSafeActUtcDate: '2021-11-30 01:50:03'
+          ReportTime: '2021-11-30 01:50:45'
+          Shift: 1
+          Duration: 7
+          Direction: East
+          Angle: 99
+          SiteName: BMO - HAULING COAL SUARAN
+          ValidationStatus: Validated
+          FollowupStatus: Close
+          DeviationEvidences:
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDE5L0NIQU5ORUxfMDdfMjAyMTExMzAwOTUwMDBfMjAyMTExMzAwOTUwMDYubXA0
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDE5L0NIQU5ORUxfMDhfMjAyMTExMzAwOTUwMDBfMjAyMTExMzAwOTUwMDYubXA0
+        - Longitude: '115.649541'
+          Latitude: '-3.674992'
+          TicketNumber: SDJ - DTSC41042-PDSM00044580
+          DeviationId: 242505
+          OperatorId: null
+          OperatorName: ''
+          EquipmentId: 00990268C8
+          EquipmentName: SDJ - DTSC41042
+          EquipmentSpeed: 29
+          unSafeAct: Driver Distraction
+          unSafeActUtcDate: '2021-11-30 01:49:23'
+          ReportTime: '2021-11-30 01:50:11'
+          Shift: 1
+          Duration: 7
+          Direction: South
+          Angle: 177
+          SiteName: SDJ - HAULING COAL
+          ValidationStatus: Validated
+          FollowupStatus: Close
+          DeviationEvidences:
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDE1L0NIQU5ORUxfMDdfMjAyMTExMzAwOTQ5MjBfMjAyMTExMzAwOTQ5MjYubXA0
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDE1L0NIQU5ORUxfMDhfMjAyMTExMzAwOTQ5MjBfMjAyMTExMzAwOTQ5MjYubXA0
+        - Longitude: '117.570120'
+          Latitude: '2.006433'
+          TicketNumber: BMO - PMSC58022-PDSM00044612
+          DeviationId: 242537
+          OperatorId: null
+          OperatorName: ''
+          EquipmentId: '0099025166'
+          EquipmentName: BMO - PMSC58022
+          EquipmentSpeed: 63
+          unSafeAct: High-speed alarm
+          unSafeActUtcDate: '2021-11-30 01:47:28'
+          ReportTime: '2021-11-30 02:19:07'
+          Shift: 1
+          Duration: 7
+          Direction: East
+          Angle: 85
+          SiteName: BMO - HAULING COAL SUARAN
+          ValidationStatus: Pending
+          FollowupStatus: Open
+          DeviationEvidences:
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDc4L0NIQU5ORUxfMDdfMjAyMTExMzAwOTQ3MjVfMjAyMTExMzAwOTQ3MzEubXA0
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDc4L0NIQU5ORUxfMDhfMjAyMTExMzAwOTQ3MjVfMjAyMTExMzAwOTQ3MzEubXA0
+        - Longitude: '117.438398'
+          Latitude: '2.025323'
+          TicketNumber: BMO - DTVV44111-PDSM00044569
+          DeviationId: 242494
+          OperatorId: null
+          OperatorName: ''
+          EquipmentId: 009902539F
+          EquipmentName: BMO - DTVV44111
+          EquipmentSpeed: 63
+          unSafeAct: High-speed alarm
+          unSafeActUtcDate: '2021-11-30 01:46:38'
+          ReportTime: '2021-11-30 01:47:24'
+          Shift: 1
+          Duration: 7
+          Direction: West
+          Angle: 254
+          SiteName: BMO - HAULING COAL
+          ValidationStatus: Pending
+          FollowupStatus: Open
+          DeviationEvidences:
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDA4L0NIQU5ORUxfMDdfMjAyMTExMzAwOTQ2MzVfMjAyMTExMzAwOTQ2NDEubXA0
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDA4L0NIQU5ORUxfMDhfMjAyMTExMzAwOTQ2MzVfMjAyMTExMzAwOTQ2NDEubXA0
+        - Longitude: '117.427938'
+          Latitude: '2.013993'
+          TicketNumber: BMO - DTVV44117-PDSM00044570
+          DeviationId: 242495
+          OperatorId: null
+          OperatorName: ''
+          EquipmentId: 00990251B3
+          EquipmentName: BMO - DTVV44117
+          EquipmentSpeed: 63
+          unSafeAct: High-speed alarm
+          unSafeActUtcDate: '2021-11-30 01:44:49'
+          ReportTime: '2021-11-30 01:45:56'
+          Shift: 1
+          Duration: 7
+          Direction: South West
+          Angle: 221
+          SiteName: BMO - HAULING COAL
+          ValidationStatus: Pending
+          FollowupStatus: Open
+          DeviationEvidences:
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDA0L0NIQU5ORUxfMDdfMjAyMTExMzAwOTQ0NDZfMjAyMTExMzAwOTQ0NTIubXA0
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDA0L0NIQU5ORUxfMDhfMjAyMTExMzAwOTQ0NDZfMjAyMTExMzAwOTQ0NTIubXA0
+        - Longitude: '117.470966'
+          Latitude: '2.031360'
+          TicketNumber: BMO - PMMB33035-PDSM00044601
+          DeviationId: 242526
+          OperatorId: null
+          OperatorName: ''
+          EquipmentId: 00990252B9
+          EquipmentName: BMO - PMMB33035
+          EquipmentSpeed: 63
+          unSafeAct: High-speed alarm
+          unSafeActUtcDate: '2021-11-30 01:44:46'
+          ReportTime: '2021-11-30 02:07:56'
+          Shift: 1
+          Duration: 7
+          Direction: West
+          Angle: 275
+          SiteName: BMO - HAULING COAL SUARAN
+          ValidationStatus: Pending
+          FollowupStatus: Open
+          DeviationEvidences:
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDU3L0NIQU5ORUxfMDdfMjAyMTExMzAwOTQ0NDNfMjAyMTExMzAwOTQ0NDkubXA0
+            - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDU3L0NIQU5ORUxfMDhfMjAyMTExMzAwOTQ0NDNfMjAyMTExMzAwOTQ0NDkubXA0
+    type: object
+    properties:
+      success:
+        type: boolean
+      error:
+        type: string
+      message:
+        type: string
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Data4'
+    required:
+      - success
+      - error
+      - message
+      - data
+  Data4:
+    title: Data4
+    example:
+      Longitude: '117.433011'
+      Latitude: '2.020575'
+      TicketNumber: BMO - DTVV44151-PDSM00044615
+      DeviationId: 242540
+      OperatorId: null
+      OperatorName: ''
+      EquipmentId: 009902521F
+      EquipmentName: BMO - DTVV44151
+      EquipmentSpeed: 63
+      unSafeAct: High-speed alarm
+      unSafeActUtcDate: '2021-11-30 02:22:41'
+      ReportTime: '2021-11-30 02:23:40'
+      Shift: 1
+      Duration: 7
+      Direction: South West
+      Angle: 228
+      SiteName: BMO - HAULING COAL
+      ValidationStatus: Pending
+      FollowupStatus: Open
+      DeviationEvidences:
+        - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDkwL0NIQU5ORUxfMDdfMjAyMTExMzAxMDIyMzhfMjAyMTExMzAxMDIyNDQubXA0
+        - path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDkwL0NIQU5ORUxfMDhfMjAyMTExMzAxMDIyMzhfMjAyMTExMzAxMDIyNDQubXA0
+    type: object
+    properties:
+      Longitude:
+        type: string
+      Latitude:
+        type: string
+      TicketNumber:
+        type: string
+      DeviationId:
+        type: integer
+        format: int32
+      OperatorId:
+        type: string
+      OperatorName:
+        type: string
+      EquipmentId:
+        type: string
+      EquipmentName:
+        type: string
+      EquipmentSpeed:
+        type: integer
+        format: int32
+      unSafeAct:
+        type: string
+      unSafeActUtcDate:
+        type: string
+      ReportTime:
+        type: string
+      Shift:
+        type: integer
+        format: int32
+      Duration:
+        type: integer
+        format: int32
+      Direction:
+        type: string
+      Angle:
+        type: integer
+        format: int32
+      SiteName:
+        type: string
+      ValidationStatus:
+        type: string
+      FollowupStatus:
+        type: string
+      DeviationEvidences:
+        type: array
+        items:
+          $ref: '#/definitions/DeviationEvidence1'
+    required:
+      - Longitude
+      - Latitude
+      - TicketNumber
+      - DeviationId
+      - OperatorId
+      - OperatorName
+      - EquipmentId
+      - EquipmentName
+      - EquipmentSpeed
+      - unSafeAct
+      - unSafeActUtcDate
+      - ReportTime
+      - Shift
+      - Duration
+      - Direction
+      - Angle
+      - SiteName
+      - ValidationStatus
+      - FollowupStatus
+      - DeviationEvidences
+  DeviationEvidence1:
+    title: DeviationEvidence1
+    example:
+      path: http://147.139.186.204:12056/api/v1/basic/mediafile/view?key=zT908g2j9nhExsAmW2pQai8%2BSEBAq%2BeEWZ0YLoqhpFs%3D&dir=RDovRXZpZGVuY2VEYXRhLzIwMjEtMTEtMzAvMzMwNDkwL0NIQU5ORUxfMDdfMjAyMTExMzAxMDIyMzhfMjAyMTExMzAxMDIyNDQubXA0
+    type: object
+    properties:
+      path:
+        type: string
+tags:
+  - name: V2
+  - name: Misc
+    description: ''
